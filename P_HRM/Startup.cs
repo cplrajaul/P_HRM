@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -38,6 +39,15 @@ namespace P_HRM
                     .AddDefaultUI()
             .AddDefaultTokenProviders();
             services.AddControllersWithViews();
+
+            //services.AddMvc(o =>
+            //{
+            //    //Add Authentication to all Controllers by default.
+            //    var policy = new AuthorizationPolicyBuilder()
+            //        .RequireAuthenticatedUser()
+            //        .Build();
+            //    o.Filters.Add(new AuthorizeFilter(policy));
+            //});
         }
 
        

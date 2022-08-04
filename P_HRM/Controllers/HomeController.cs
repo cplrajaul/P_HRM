@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using P_HRM.Models;
 using System;
@@ -18,6 +19,8 @@ namespace P_HRM.Controllers
             _logger = logger;
         }
 
+        //Anyone have permission to see this page without authentication
+        [AllowAnonymous]
         public IActionResult Index()
         {
             return View();
